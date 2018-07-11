@@ -1,13 +1,45 @@
 package pl.akademiakodu;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class Main extends JFrame {
+
+    //ma zawierać pytanie
+    //ma zawierać 2 przyciski tak i nie
+
+    private JButton buttonYes;
+    private JButton buttonNo;
+    private JLabel labelQuestion;
+
+    public Main(){
+        super("Milionerzy");   //ustawia tytuł okna
+        setSize(500,500);           //ustawia wielkość okna
+        setDefaultCloseOperation(1);//sprawia, że działa przycisk exit
+        setVisible(true);           //widoczność okna
+        buttonYes= new JButton("Tak");
+        buttonNo= new JButton("Nie");
+        labelQuestion=new JLabel("Czy Polska leży w Europie?",0);
+        add(labelQuestion);
+        add(buttonYes);
+        add(buttonNo);
+        setLayout((new GridLayout(3,1)));
+
+
+    }
 
     public static void main(String[] args) {
 	// write your code here
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                Main main = new Main();
+            }
+        });
 
         List<Question> questionList = new ArrayList<>();
 
