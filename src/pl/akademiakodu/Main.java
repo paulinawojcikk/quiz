@@ -4,8 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 
 public class Main extends JFrame implements ActionListener {
@@ -46,6 +51,7 @@ public class Main extends JFrame implements ActionListener {
 
 
 
+
     public Main() {
         super("Milionerzy");   //ustawia tytuł okna
         createDefaultComponents();
@@ -64,9 +70,16 @@ public class Main extends JFrame implements ActionListener {
         setSize(500,500);           //ustawia wielkość okna
         setDefaultCloseOperation(1);//sprawia, że działa przylcisk exit
         setVisible(true);           //widoczność okna
-        setQuestionGenerator( new SimpleQuestionGenerator());
+
+
+
+        setQuestionGenerator( new FileGenerator());
+
+
         //ustawiamy konkretną klasę, która będzie generować nam pytania
         //za pomocą new NazwaKlasy możemy podmienić nasz generator za pomocą 1 linijki kodu!
+
+
         buttonYes= new JButton("Tak");
         buttonNo= new JButton("Nie");
         labelQuestion=new JLabel(questionsList.get(0).getContent(),0);
