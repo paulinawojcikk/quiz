@@ -2,3 +2,7 @@ Czy Kapsztad leży w RPA? tak
 Czy Warszawa leży w Polsce? tak
 Czy Bali należy do Europy? nie
 Czy Sagrada Familia jest w Madrycie? nie
+Czy Polska leży w Europie? tak
+Czy 2+5=8? nie
+Czy 2^10=1024? tak
+Czy Chopin urodził się w Warszawie? nie
